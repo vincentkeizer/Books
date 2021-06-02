@@ -8,6 +8,8 @@ namespace Books.Catalog.Domain.Books
 {
     public interface IBookRepository
     {
-        Book? Get(BookId bookId);
+        Task<Book?> Get(BookId bookId);
+
+        Task Add(Book book);
     }
 }

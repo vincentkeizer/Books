@@ -1,3 +1,4 @@
+using Books.Catalog.Api.Books.Handlers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -6,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using Books.Catalog.Api.Catalogs.Queries;
+using Books.Catalog.Api.Shared.Behaviors;
 using Books.Catalog.Infra.Databases;
 using Microsoft.EntityFrameworkCore;
 
@@ -36,6 +38,8 @@ namespace Books.Catalog.Api
             services.AddDbContext<CatalogDbContext>(
                 options => options.UseSqlServer(Configuration.GetConnectionString("CatalogDatabase"))
             );
+            services.AddCommandBehaviors();
+            services.AddBooksCommandHandlers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
