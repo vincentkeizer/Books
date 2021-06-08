@@ -11,6 +11,7 @@ namespace Books.Catalog.Api.Shared.Behaviors
     {
         public static IServiceCollection AddCommandBehaviors(this IServiceCollection services) 
             => services.AddTransient(typeof(LoggingBehavior<,>), typeof(IPipelineBehavior<,>))
+                       .AddTransient(typeof(ValidatorBehavior<,>), typeof(IPipelineBehavior<,>))
                        .AddTransient(typeof(TransactionBehavior<,>), typeof(IPipelineBehavior<,>));
     }
 }
