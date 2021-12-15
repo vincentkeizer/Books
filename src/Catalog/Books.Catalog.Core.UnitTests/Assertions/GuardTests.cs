@@ -24,7 +24,7 @@ namespace Books.Catalog.Core.UnitTests.Assertions
         } 
         
         [Fact]
-        public void IsNotNull_WhenValueIsDefault_ThenThrowsArgumentException()
+        public void IsNotDefault_WhenValueIsDefault_ThenThrowsArgumentException()
         {
             Guid value = default;
 

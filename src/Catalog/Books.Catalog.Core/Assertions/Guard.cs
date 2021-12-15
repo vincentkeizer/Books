@@ -22,7 +22,7 @@ namespace Books.Catalog.Core.Assertions
         {
             if (value.Equals(default (T)))
             {
-                throw new ArgumentNullException(parameterName);
+                throw new ArgumentException($"parameter '{parameterName}' should not be default");
             }
         }
         
@@ -30,7 +30,7 @@ namespace Books.Catalog.Core.Assertions
         {
             if (string.IsNullOrWhiteSpace(value))
             {
-                throw new ArgumentException(parameterName);
+                throw new ArgumentException($"parameter '{parameterName}' should not be null or whitespace");
             }
         }
 
