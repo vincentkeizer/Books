@@ -9,6 +9,7 @@ using Microsoft.OpenApi.Models;
 using Books.Catalog.Api.Catalogs.Queries;
 using Books.Catalog.Api.Shared.Behaviors;
 using Books.Catalog.Infra.Databases;
+using Books.Catalog.Infra.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace Books.Catalog.Api
@@ -40,6 +41,7 @@ namespace Books.Catalog.Api
             );
             services.AddCommandBehaviors();
             services.AddBooksCommandHandlers();
+            services.AddRepositories();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

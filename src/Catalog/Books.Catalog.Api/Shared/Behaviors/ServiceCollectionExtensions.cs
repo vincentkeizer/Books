@@ -10,8 +10,8 @@ namespace Books.Catalog.Api.Shared.Behaviors
     public static class ServiceCollectionExtensions
     {
         public static IServiceCollection AddCommandBehaviors(this IServiceCollection services) 
-            => services.AddTransient(typeof(LoggingBehavior<,>), typeof(IPipelineBehavior<,>))
-                       .AddTransient(typeof(ValidatorBehavior<,>), typeof(IPipelineBehavior<,>))
-                       .AddTransient(typeof(TransactionBehavior<,>), typeof(IPipelineBehavior<,>));
+            => services.AddTransient(typeof(IPipelineBehavior<,>), typeof(LoggingBehavior<,>))
+                       .AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidatorBehavior<,>))
+                       .AddTransient(typeof(IPipelineBehavior<,>), typeof(TransactionBehavior<,>));
     }
 }

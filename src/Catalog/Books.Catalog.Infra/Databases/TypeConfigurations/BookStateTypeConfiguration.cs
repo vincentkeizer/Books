@@ -18,6 +18,7 @@ namespace Books.Catalog.Infra.Databases.TypeConfigurations
                    .WithMany(m => m.Books)
                    .HasForeignKey(m => m.AuthorId);
             builder.Property(m => m.Title).IsRequired();
+            builder.Ignore(m => m.Entity);
         }
     }
 }

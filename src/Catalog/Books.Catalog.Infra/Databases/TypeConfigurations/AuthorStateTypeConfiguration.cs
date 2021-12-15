@@ -16,6 +16,7 @@ namespace Books.Catalog.Infra.Databases.TypeConfigurations
             builder.HasKey(m => m.Id);
             builder.Property(m => m.FirstName).IsRequired();
             builder.Property(m => m.LastName).IsRequired();
+            builder.Ignore(m => m.Entity);
         }
     }
 }
